@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 
 # Load models
-rf = pickle.load(open("rf_churn_model.pkl","rb"))
-gb = pickle.load(open("gb_churn_model.pkl","rb"))
+rf = pickle.load(open("/home/ankit/code/rf_churn_model.pkl","rb"))
+gb = pickle.load(open("/home/ankit/code/gb_churn_model.pkl","rb"))
 
 st.title("📞 Telecom Customer Churn Prediction")
 
