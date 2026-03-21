@@ -6,7 +6,7 @@ import pickle
 rf = pickle.load(open("/home/ankit/code/rf_churn_model.pkl","rb"))
 gb = pickle.load(open("/home/ankit/code/gb_churn_model.pkl","rb"))
 
-st.title("📞 Telecom Customer Churn Prediction")
+st.title("Telecom Customer Churn Prediction")
 
 st.subheader("Enter Customer Details")
 
