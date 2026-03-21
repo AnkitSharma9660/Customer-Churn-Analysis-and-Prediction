@@ -22,8 +22,8 @@ This project focuses on analyzing telecom customer behaviour and building machin
 
 ### Model Performance
 
-- Random Forest Accuracy: **RF_ACCURACY**  
-- Gradient Boosting Accuracy: **GB_ACCURACY**
+- Random Forest Accuracy: **0.8019**  
+- Gradient Boosting Accuracy: **0.8026**
 
 ---
 
