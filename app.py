@@ -1,21 +1,21 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
 import pickle
 
 # ===== Load Models =====
-rf = pickle.load(open("rf_churn_model.pkl", "rb"))
-gb = pickle.load(open("gb_churn_model.pkl", "rb"))
+rf = pickle.load(open("rf_churn_model.pkl","rb"))
+gb = pickle.load(open("gb_churn_model.pkl","rb"))
 
-st.title("📞 Telecom Customer Churn Prediction")
+st.title("📞 Telecom Customer Churn Prediction System")
 
-st.subheader("Enter Customer Information")
+st.subheader("Customer Demographic Information")
 
-# ===== Basic Inputs =====
-gender = st.selectbox("Gender", [0,1])
+gender = st.selectbox("Gender (0 = Female, 1 = Male)", [0,1])
 senior = st.selectbox("Senior Citizen", [0,1])
 partner = st.selectbox("Partner", [0,1])
 dependents = st.selectbox("Dependents", [0,1])
+
+st.subheader("Customer Subscription Details")
 
 tenure = st.number_input("Tenure (Months)", 0, 72, 1)
 monthly = st.number_input("Monthly Charges", 0.0, 200.0, 50.0)
@@ -23,25 +23,45 @@ monthly = st.number_input("Monthly Charges", 0.0, 200.0, 50.0)
 total = tenure * monthly
 st.write(f"Estimated Total Charges: {total:.2f}")
 
-phone = st.selectbox("Phone Service", [0,1])
-multiple = st.selectbox("Multiple Lines", [0,1])
-
-security = st.selectbox("Online Security", [0,1])
-backup = st.selectbox("Online Backup", [0,1])
-device = st.selectbox("Device Protection", [0,1])
-support = st.selectbox("Tech Support", [0,1])
-
-tv = st.selectbox("Streaming TV", [0,1])
-movies = st.selectbox("Streaming Movies", [0,1])
-
 paperless = st.selectbox("Paperless Billing", [0,1])
 
-# ===== Internet Service Dummy =====
+# ===== Phone Dependency =====
+phone = st.selectbox("Phone Service", [0,1])
+
+if phone == 1:
+    multiple = st.selectbox("Multiple Lines", [0,1])
+else:
+    multiple = 0
+    st.write("Multiple Lines auto set to 0")
+
+# ===== Internet Dependency =====
 internet = st.selectbox("Internet Service", ["DSL","Fiber optic","No"])
 
-dsl = 1 if internet=="DSL" else 0
-fiber = 1 if internet=="Fiber optic" else 0
-no_internet = 1 if internet=="No" else 0
+if internet == "No":
+    dsl = 0
+    fiber = 0
+    no_internet = 1
+
+    security = 0
+    backup = 0
+    device = 0
+    support = 0
+    tv = 0
+    movies = 0
+
+    st.write("All internet based services auto set to 0")
+
+else:
+    dsl = 1 if internet=="DSL" else 0
+    fiber = 1 if internet=="Fiber optic" else 0
+    no_internet = 0
+
+    security = st.selectbox("Online Security", [0,1])
+    backup = st.selectbox("Online Backup", [0,1])
+    device = st.selectbox("Device Protection", [0,1])
+    support = st.selectbox("Tech Support", [0,1])
+    tv = st.selectbox("Streaming TV", [0,1])
+    movies = st.selectbox("Streaming Movies", [0,1])
 
 # ===== Contract Dummy =====
 contract = st.selectbox("Contract Type", ["Month-to-month","One year","Two year"])
