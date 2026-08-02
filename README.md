@@ -186,7 +186,11 @@ Customer Churn Prediction
 ## 📊 Entries
 
 ![](Results/Enter_details_1.png)
+
+---
 ![](Results/Enter_details_2.png)
+
+---
 ![](Results/Enter_details_3.png)
 
 ---
