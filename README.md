@@ -181,17 +181,13 @@ Customer Churn Prediction
 ---
 
 # 📸 Diagrams
----
-
-## 📊 Entries
-
-![](Results/Enter_details_1.png)
+![](Results/Enter_detials_1.png)
 
 ---
-![](Results/Enter_details_2.png)
+![](Results/Enter_detials_2.png)
 
 ---
-![](Results/Enter_details_3.png)
+![](Results/Enter_detials_3.png)
 
 ---
 
