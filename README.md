@@ -39,8 +39,7 @@ The project includes:
 # 🚀 Demo
 
 ### 🌐 Live Demo
-
-> **Coming Soon**
+https://tele-customer-churn.streamlit.app/
 
 
 ---
