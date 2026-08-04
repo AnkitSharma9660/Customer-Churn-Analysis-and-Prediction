@@ -17,6 +17,11 @@
 
 An end-to-end Machine Learning project that predicts customer churn using customer information. The project includes data preprocessing, exploratory data analysis, feature engineering, model training, evaluation, and deployment using a Flask web application.
 
+## 👨‍💻 Internship Information
+
+This project was developed as part of my internship to demonstrate practical skills in Data Cleaning, Exploratory Data Analysis (EDA), Machine Learning, Model Evaluation, and Dashboard Creation.
+
+**Intern ID:** `CITS6759`
 
 ---
 
